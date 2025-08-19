@@ -1,5 +1,6 @@
 import React, { type ButtonHTMLAttributes } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
+import "../styles/colors.css"
 
 // Metadati di Storybook per il componente Colors.
 // Configura il titolo nel pannello e abilita la documentazione automatica.
@@ -30,27 +31,7 @@ const ClickToCopy: React.FC<{ value: string } & ButtonHTMLAttributes<HTMLButtonE
 export const Default: Story = {
     render: () =>
         <div>
-            {/* Stili CSS globali per la palette e il layout */}
-            <style>
-                {`
-                /* Stile per il container che ospita i campioni di colore */
-                    .container {
-                        display: grid;
-                        grid-template-columns: repeat(16, 1fr);
-                        height: 3rem;
-                        margin-bottom: var(--spacing-lg);
-                    }
-                    /* Stile per il box informativo */
-                    .info {
-                        padding: var(--spacing-md);
-                        margin-bottom: var(--spacing-lg);
-                        border-radius: 0.25rem;
-                        border: 1px solid;
-                    }
-                `}
-            </style>
-
-            <h1>Colors - Modern Accents Palette</h1>
+            <h2>Colors - Modern Accents Palette</h2>
 
             {/* Sezione per i toni Blue-Gray */}
             <h3>Blue-Gray Tones</h3>
