@@ -32,7 +32,7 @@ dd {
     align-items: center;
 }
 
-.info {
+.spacing-info {
     background: magenta;
     height: 2ch;
     width: var(--story-spacing);

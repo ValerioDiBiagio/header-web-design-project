@@ -3,7 +3,7 @@ import { Logo } from "../componets/Logo/Logo";
 
 
 const meta: Meta<typeof Logo> = {
-    title: 'Atoms/Logo',
+    title: 'Components/Logo',
     component: Logo,
     parameters: {
         layout: 'centered',
