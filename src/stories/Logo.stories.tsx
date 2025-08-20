@@ -1,6 +1,6 @@
 // Importa i tipi necessari da Storybook e il componente Logo
 import type { Meta, StoryObj } from '@storybook/react';
-import { Logo } from "../componets/Logo/Logo";
+import { Logo } from "../components/Logo/Logo";
 
 // Configurazione principale (metadata) per Storybook
 const meta: Meta<typeof Logo> = {

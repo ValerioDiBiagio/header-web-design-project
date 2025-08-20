@@ -1,7 +1,7 @@
 // Importa i tipi da Storybook e i componenti NavLink e NavLinkProps
 import type { Meta, StoryObj } from '@storybook/react';
-import { NavLink } from "../componets/NavLink/Navlink";
-import type { NavLinkProps } from '../componets/NavLink/Navlink';
+import { NavLink } from "../components/NavLink/NavLink";
+import type { NavLinkProps } from '../components/NavLink/NavLink';
 
 // Metadati di configurazione per il componente NavLink in Storybook
 const meta: Meta<typeof NavLink> = {
