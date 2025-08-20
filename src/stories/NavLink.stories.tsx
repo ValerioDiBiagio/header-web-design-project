@@ -49,8 +49,8 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
     // Argomenti di default per questa storia
     args: {
-        href: "/products",
-        label: "Products"
+        href: "/home",
+        label: "Home"
     },
     // Funzione che renderizza il componente con le props fornite
     render: ({ href, label }: NavLinkProps) => (
