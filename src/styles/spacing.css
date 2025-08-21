@@ -1,40 +1,70 @@
+/* Stili per i titoli h1 e i paragrafi */
 h1,
 p {
     text-align: start;
+    /* Allinea il testo all'inizio */
     max-width: calc(550rem/16);
+    /* Imposta la larghezza massima utilizzando una formula */
 }
 
+/* Stili per la lista di descrizioni (dl) */
 dl {
     font-size: 1rem;
+    /* Dimensione del font di base */
     border: 1px solid #ccc;
+    /* Bordo sottile grigio */
     display: grid;
+    /* Utilizza il layout a griglia */
     max-width: calc(550rem/16);
+    /* Larghezza massima */
     grid-template-columns: 1fr 4fr 1fr;
+    /* Definisce le colonne della griglia */
     border-bottom: none;
+    /* Rimuove il bordo inferiore */
     border-radius: 0.5rem;
+    /* Angoli arrotondati */
 }
 
+/* Stili per i termini della lista (dt) */
 dt {
     font-weight: 600;
+    /* Spessore del font semibold */
     padding: var(--spacing-sm) var(--spacing-md);
+    /* Spaziatura interna */
     border-bottom: 1px solid #ccc;
+    /* Bordo inferiore */
     border-right: 1px solid #ccc;
+    /* Bordo destro */
 }
 
+/* Stili per le descrizioni della lista (dd) */
 dd {
     padding: var(--spacing-sm) var(--spacing-md);
+    /* Spaziatura interna */
     border-bottom: 1px solid #ccc;
+    /* Bordo inferiore */
     font-family: monospace;
+    /* Utilizza un font a larghezza fissa */
     display: grid;
+    /* Utilizza il layout a griglia */
     gap: 1ch;
+    /* Spazio tra gli elementi della griglia */
     grid-template-columns: subgrid;
+    /* Le colonne ereditano dal genitore */
     grid-column: 2/4;
+    /* Si estende dalla seconda alla quarta colonna */
     align-items: center;
+    /* Allinea gli elementi verticalmente al centro */
 }
 
+/* Stili per la classe 'spacing-info' */
 .spacing-info {
     background: magenta;
+    /* Sfondo magenta */
     height: 2ch;
+    /* Altezza fissa */
     width: var(--story-spacing);
+    /* Larghezza definita da una variabile CSS */
     display: block;
+    /* Visualizza come blocco */
 }

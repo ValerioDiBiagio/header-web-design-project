@@ -1,14 +1,22 @@
 .container {
     display: grid;
+    /* Utilizza il layout a griglia */
     grid-template-columns: repeat(16, 1fr);
+    /* Crea 16 colonne di larghezza uguale */
     height: 3rem;
+    /* Imposta un'altezza fissa di 3rem */
     margin-bottom: var(--spacing-lg);
+    /* Aggiunge un margine inferiore basato su una variabile CSS */
 }
 
 /* Stile per il box informativo */
 .info {
     padding: var(--spacing-md);
+    /* Spaziatura interna (padding) definita da una variabile CSS */
     margin-bottom: var(--spacing-lg);
+    /* Margine inferiore (margin-bottom) definito da una variabile CSS */
     border-radius: 0.25rem;
+    /* Angoli arrotondati */
     border: 1px solid;
+    /* Bordo sottile di 1px */
 }

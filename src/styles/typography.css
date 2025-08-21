@@ -1,62 +1,79 @@
+/* Importa il font "Nunito" da Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Nunito:&display=swap");
 
+/* Imposta il font principale per l'intero documento HTML */
 html {
     font-family: "Nunito", Arial, Helvetica, sans-serif;
 }
 
+/* Applica la dimensione del font "hero" a elementi con la classe .font-size-hero */
 .font-size-hero {
     font-size: var(--font-size-hero);
 }
 
+/* Imposta la dimensione del font di base per il body */
 body {
     font-size: var(--font-size-body);
 }
 
+/* Applica gli stili a tutti i tag h1 e agli elementi con la classe .font-size-h1 */
 :where(h1, .font-size-h1) {
     font-size: var(--font-size-h1);
+    /* Dimensione del font definita da una variabile CSS */
     margin-bottom: 0.25em;
+    /* Margine inferiore */
     text-wrap: balance;
+    /* Ottimizza il bilanciamento del testo per i titoli */
 }
 
+/* Applica gli stili a tutti i tag h2 e agli elementi con la classe .font-size-h2 */
 :where(h2, .font-size-h2) {
     font-size: var(--font-size-h2);
     margin-bottom: 0.25em;
     text-wrap: balance;
 }
 
+/* Applica gli stili a tutti i tag h3 e agli elementi con la classe .font-size-h3 */
 :where(h3, .font-size-h3) {
     font-size: var(--font-size-h3);
     margin-bottom: 0.25em;
     text-wrap: balance;
 }
 
+/* Applica gli stili a tutti i tag h4 e agli elementi con la classe .font-size-h4 */
 :where(h4, .font-size-h4) {
     font-size: var(--font-size-h4);
     margin-bottom: 0.25em;
     text-wrap: balance;
 }
 
+/* Applica gli stili a tutti i tag h5 e agli elementi con la classe .font-size-h5 */
 :where(h5, .font-size-h5) {
     font-size: var(--font-size-h5);
     margin-bottom: 0.25em;
     text-wrap: balance;
 }
 
+/* Applica gli stili a tutti i tag h6 e agli elementi con la classe .font-size-h6 */
 :where(h6, .font-size-h6) {
     font-size: var(--font-size-h6);
     margin-bottom: 0.25em;
     text-wrap: balance;
 }
 
+/* Applica gli stili a tutti i tag p e agli elementi con la classe .font-size-body */
 :where(p, .font-size-body) {
     font-size: var(--font-size-body);
     margin-bottom: 1em;
+    /* Margine inferiore */
 }
 
+/* Applica gli stili a tutti i tag small e agli elementi con la classe .font-size-small */
 :where(small, .font-size-small) {
     font-size: var(--font-size-sm);
 }
 
+/* Applica gli stili agli elementi con la classe .font-size-xs */
 :where(.font-size-xs) {
     font-size: var(--font-size-xs);
 }
