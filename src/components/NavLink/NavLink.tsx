@@ -2,7 +2,6 @@
 import type { ReactNode } from 'react';
 
 // Definisce il tipo delle props accettate dal componente NavLink
-// 'href' e 'label' sono stringhe obbligatorie
 // 'icon' è un `ReactNode` opzionale (può essere un'icona SVG, un altro componente, ecc.)
 export type NavLinkProps = {
     label: string;

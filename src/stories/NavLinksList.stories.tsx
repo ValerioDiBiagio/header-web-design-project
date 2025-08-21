@@ -22,7 +22,7 @@ const meta: Meta<typeof NavLinksList> = {
     tags: ["autodocs"],
     argTypes: {
         items: {
-            // Tipo di controllo per l'argomento 'links'
+            // Tipo di controllo per l'argomento 'items'
             control: "object",
             // Descrizione dell'argomento
             description: "Array di oggetti con href, label e opzionalmente icon.",
@@ -38,7 +38,8 @@ type Story = StoryObj<typeof meta>;
 // Definizione della storia "Default"
 export const Default: Story = {
     args: {
-        items: [ // Valore di default per l'array di link
+        // Valore di default per l'array di items
+        items: [
             { label: "Home", onClick: () => console.log("Home clicked") },
             { label: "Products", onClick: () => console.log("Products clicked") },
             { label: "About", onClick: () => console.log("About clicked") },

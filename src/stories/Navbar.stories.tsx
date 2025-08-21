@@ -34,7 +34,7 @@ const meta: Meta<typeof Navbar> = {
             // Descrizione della prop
             description: "Testo visualizzato come logo nella parte sinistra della Navbar.",
         },
-        // Controllo per la prop 'links'
+        // Controllo per la prop 'items'
         items: {
             // Tipo di controllo: editor di oggetti
             control: "object",
