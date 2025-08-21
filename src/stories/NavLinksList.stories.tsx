@@ -21,7 +21,7 @@ const meta: Meta<typeof NavLinksList> = {
     // Abilita la generazione automatica della documentazione
     tags: ["autodocs"],
     argTypes: {
-        links: {
+        items: {
             // Tipo di controllo per l'argomento 'links'
             control: "object",
             // Descrizione dell'argomento
@@ -38,7 +38,7 @@ type Story = StoryObj<typeof meta>;
 // Definizione della storia "Default"
 export const Default: Story = {
     args: {
-        links: [ // Valore di default per l'array di link
+        items: [ // Valore di default per l'array di link
             { label: "Home", onClick: () => console.log("Home clicked") },
             { label: "Products", onClick: () => console.log("Products clicked") },
             { label: "About", onClick: () => console.log("About clicked") },

@@ -35,7 +35,7 @@ const meta: Meta<typeof Navbar> = {
             description: "Testo visualizzato come logo nella parte sinistra della Navbar.",
         },
         // Controllo per la prop 'links'
-        links: {
+        items: {
             // Tipo di controllo: editor di oggetti
             control: "object",
             description:
@@ -55,7 +55,7 @@ export const Default: Story = {
     // Argomenti di default per questo story
     args: {
         logoText: "Logo",
-        links: [
+        items: [
             { label: "Home", onClick: () => console.log("Home clicked") },
             { label: "Products", onClick: () => console.log("Products clicked") },
             { label: "About", onClick: () => console.log("About clicked") },

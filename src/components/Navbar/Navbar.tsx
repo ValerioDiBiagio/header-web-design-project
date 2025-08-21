@@ -3,14 +3,14 @@ import { NavLinksList, type NavLinksListProps } from "../NavLinksList/NavLinksLi
 
 export type NavbarProps = {
     logoText: string,
-    links: NavLinksListProps["links"];
+    items: NavLinksListProps["items"];
 }
 
-export const Navbar = ({ logoText, links }: NavbarProps) => {
+export const Navbar = ({ logoText, items }: NavbarProps) => {
     return (
         <header>
             <Logo text={logoText} />
-            <NavLinksList links={links} />
+            <NavLinksList items={items} />
         </header>
     )
 }
