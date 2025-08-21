@@ -37,14 +37,14 @@ export const Default: Story = {
     args: {
         logoText: "Logo",
         links: [
-            { href: "/home", label: "Home" },
-            { href: "/products", label: "Products" },
-            { href: "/about", label: "About" },
-            { href: "/contact", label: "Contact" },
-        ]
+            { label: "Home", onClick: () => console.log("Home clicked") },
+            { label: "Products", onClick: () => console.log("Products clicked") },
+            { label: "About", onClick: () => console.log("About clicked") },
+            { label: "Contacts", onClick: () => console.log("Contacts clicked") }
+        ],
     },
 
-    render: ({ logoText, links }: NavbarProps) => {
-        return <Navbar logoText={logoText} links={links} />;
+    render: (args: NavbarProps) => {
+        return <Navbar {...args} />;
     }
 }

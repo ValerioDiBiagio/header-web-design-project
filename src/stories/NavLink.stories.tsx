@@ -24,17 +24,20 @@ const meta: Meta<typeof NavLink> = {
     tags: ['autodocs'],
     // Definisce i controlli per le proprietà (props) del componente
     argTypes: {
-        href: {
-            control: 'text',
-            description: 'URL di destinazione del link.'
-        },
         label: {
             control: 'text',
             description: 'Testo da visualizzare interno del link.'
         },
+        arialabel: {
+            control: "text",
+            description: "Etichetta per l'accessibilità, fondamentale quando è presente solo un'icona."
+        },
         icon: {
             control: 'text',
             description: 'Nome o riferimento icona da mostrare accanto al testo (opzionale).'
+        },
+        onClick: {
+            description: "Funzione chiamata quando l'utente clicca sul link (button)."
         }
     }
 };
@@ -49,11 +52,10 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
     // Argomenti di default per questa storia
     args: {
-        href: "/home",
         label: "Home"
     },
     // Funzione che renderizza il componente con le props fornite
-    render: ({ href, label }: NavLinkProps) => (
-        <NavLink href={href} label={label} />
+    render: (args: NavLinkProps) => (
+        <NavLink {...args} />
     )
 };
