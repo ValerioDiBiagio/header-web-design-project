@@ -1,5 +1,6 @@
 import { NavLink } from "../NavLink/NavLink";
 import type { NavLinkProps } from '../NavLink/NavLink';
+import "./NavLinkList.css"
 
 // Definisce il tipo delle proprietà del componente NavLinksList.
 // items: un array di oggetti di tipo NavLinkProps.
@@ -11,7 +12,7 @@ export type NavLinksListProps = {
 export const NavLinksList = ({ items }: NavLinksListProps) => {
     return (
         <nav>
-            <ul>
+            <ul className="list-items">
                 {/* Mappa l'array di items e crea un elemento <li> con un componente NavLink per ogni elemento. */}
                 {items.map((item, index) =>
                     <li key={index} > {/* La chiave è importante per le liste in React. */}

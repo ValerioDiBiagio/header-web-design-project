@@ -1,0 +1,20 @@
+.list-items {
+    display: flex;
+    /* Attiva Flexbox sul contenitore ul */
+    list-style: none;
+    /* Rimuove i puntini della lista */
+    padding: 0;
+    /* Rimuove il padding predefinito */
+    margin: 0;
+    /* Rimuove il margine predefinito */
+    justify-content: center;
+    /* Centra gli elementi orizzontalmente */
+    gap: 20px;
+    /* Aggiunge uno spazio tra gli elementi della lista */
+}
+
+/* Stili aggiuntivi per i link all'interno della navbar */
+.list-items li {
+    padding: 10px 15px;
+    /* Aggiunge padding per dare respiro ai link */
+}

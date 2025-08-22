@@ -1,0 +1,45 @@
+.navbar-container {
+    display: flex;
+    /* Attiva Flexbox sul contenitore principale */
+    justify-content: center;
+    /* Centra orizzontalmente il contenuto */
+    align-items: center;
+    /* Allinea verticalmente gli elementi */
+    width: 100%;
+    /* Assicura che la navbar occupi l'intera larghezza */
+    padding: 20px;
+}
+
+.list-items {
+    display: flex;
+    /* Rende la lista un contenitore Flexbox */
+    justify-content: center;
+    /* Centra orizzontalmente i link */
+    list-style: none;
+    /* Rimuove i puntini della lista */
+    padding: 0;
+    margin: 0;
+    gap: 20px;
+    /* Aggiunge uno spazio tra ogni voce del menu */
+}
+
+.navbar-left,
+.navbar-right,
+.navbar-center {
+    display: flex;
+    /* Rende ogni sezione un contenitore flex */
+    align-items: center;
+    /* Allinea verticalmente gli elementi all'interno */
+}
+
+/* Stile per la sezione centrale (con logo e link principali) */
+.navbar-center {
+    flex-direction: column;
+    /* Dispone il logo e il menu in colonna */
+    flex-grow: 1;
+    /* Permette a questa sezione di occupare tutto lo spazio disponibile */
+    justify-content: center;
+    /* Centra il suo contenuto */
+    gap: 15px;
+    /* Spazio tra il logo e la lista di link */
+}

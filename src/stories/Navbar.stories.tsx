@@ -59,7 +59,9 @@ export const Default: Story = {
             { label: "Home", onClick: () => console.log("Home clicked") },
             { label: "Products", onClick: () => console.log("Products clicked") },
             { label: "About", onClick: () => console.log("About clicked") },
-            { label: "Contacts", onClick: () => console.log("Contacts clicked") }
+            { label: "Contacts", onClick: () => console.log("Contacts clicked") },
+            { label: "Wishlist", onClick: () => console.log("Whishlist clicked") },
+            { label: "Cart", onClick: () => console.log("Cart clicked") }
         ],
     },
     // Funzione per il rendering del componente nello story

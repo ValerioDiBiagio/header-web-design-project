@@ -1,23 +1,35 @@
 import { Logo } from "../Logo/Logo";
 import { NavLinksList, type NavLinksListProps } from "../NavLinksList/NavLinksList";
+import "./Navbar.css";
 
-// Definisce il tipo delle proprietà per il componente Navbar.
 export type NavbarProps = {
-    // Testo da visualizzare nel logo.
-    logoText: string,
-    // Array di items da passare a NavLinksList.
+    logoText: string;
     items: NavLinksListProps["items"];
-}
+};
 
-// Componente funzionale Navbar che accetta logoText e items come props.
 export const Navbar = ({ logoText, items }: NavbarProps) => {
-    return (
-        <header>
-            {/* Componente Logo per la parte sinistra della navbar, con il testo fornito. */}
-            <Logo text={logoText} />
-            {/* Componente NavLinksList per la lista degli items di navigazione, con gli elementi forniti. */}
-            <NavLinksList items={items} />
-        </header>
-    )
-}
+    // Dividi gli elementi in tre gruppi: sinistra, centro e destra.
+    const homeLink = items.find(item => item.label === 'Home');
+    const centerLinks = items.filter(item => ['Products', 'About', 'Contacts'].includes(item.label));
+    const rightLinks = items.filter(item => ['Wishlist', 'Cart'].includes(item.label));
 
+    return (
+        <header className="navbar-container">
+            {/* Sezione Sinistra per "Home" */}
+            <div>
+                {homeLink && <NavLinksList items={[homeLink]} />}
+            </div>
+
+            {/* Sezione Centrale (Logo e Links) */}
+            <div className="navbar-center">
+                <Logo text={logoText} />
+                <NavLinksList items={centerLinks} />
+            </div>
+
+            {/* Sezione Destra per Wishlist e Cart */}
+            <div>
+                <NavLinksList items={rightLinks} />
+            </div>
+        </header>
+    );
+};
