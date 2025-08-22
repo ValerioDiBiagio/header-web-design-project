@@ -9,6 +9,6 @@ export const Logo = ({ text }: logoProps) => {
     // Il componente restituisce un elemento JSX.
     return (
         // Il testo passato tramite le props viene inserito all'interno del 'div'.
-        <div>{text}</div>
+        <div id="logo">{text}</div>
     )
 }

@@ -1,9 +1,14 @@
-/* Importa il font "Nunito" da Google Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Nunito:&display=swap");
+/* Importa i fonts "Montserrat" e "Space Grotesk" da Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap');
 
 /* Imposta il font principale per l'intero documento HTML */
 html {
-    font-family: "Nunito", Arial, Helvetica, sans-serif;
+    font-family: "Montserrat", sans-serif;
+}
+
+/* Imposta il font per il logo */
+#logo {
+    font-family: "Space Grotesk", sans-serif;
 }
 
 /* Applica la dimensione del font "hero" a elementi con la classe .font-size-hero */
