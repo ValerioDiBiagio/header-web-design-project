@@ -1,0 +1,6 @@
+.items {
+    border: none;
+    /* Rimuove il bordo dagli elementi */
+    background-color: transparent;
+    /* Rende lo sfondo trasparente */
+}
