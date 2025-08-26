@@ -1,13 +1,14 @@
 .navbar-container {
     display: flex;
     /* Attiva Flexbox sul contenitore principale */
-    justify-content: center;
+    justify-content: space-between;
     /* Centra orizzontalmente il contenuto */
     align-items: center;
     /* Allinea verticalmente gli elementi */
     width: 100%;
     /* Assicura che la navbar occupi l'intera larghezza */
     padding: 20px;
+    background-color: var(--color-neutral-0);
 }
 
 .list-items {

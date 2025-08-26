@@ -9,15 +9,16 @@ export type NavLinkProps = {
     icon?: ReactNode;
     arialabel?: string;
     onClick?: () => void;
+    state?: 'default' | 'hover' | 'active' | 'focus';
 };
 
 // Definisce e esporta il componente funzionale NavLink
 // Destruttura le props `href`, `label` e `icon` dall'oggetto delle props
-export const NavLink = ({ label, icon, arialabel, onClick }: NavLinkProps) => {
+export const NavLink = ({ label, icon, arialabel, onClick, state = 'default' }: NavLinkProps) => {
     // Il componente restituisce un elemento `<button>`
     return (
         // L'attributo `href` viene impostato dinamicamente con il valore della prop `href`
-        <button onClick={onClick} aria-label={arialabel} className='items'>
+        <button onClick={onClick} aria-label={arialabel} className={`items-${state} items`}>
             {/* Renderizza lo `span` contenente l'icona solo se la prop `icon` è presente.
                 Questa è una renderizzazione condizionale.
             */}

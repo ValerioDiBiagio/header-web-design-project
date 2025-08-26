@@ -3,4 +3,5 @@
     /* Rimuove il bordo dagli elementi */
     background-color: transparent;
     /* Rende lo sfondo trasparente */
+    cursor: pointer;
 }

@@ -9,7 +9,7 @@
     /* Rimuove il margine predefinito */
     justify-content: center;
     /* Centra gli elementi orizzontalmente */
-    gap: 20px;
+    gap: 1rem;
     /* Aggiunge uno spazio tra gli elementi della lista */
 }
 

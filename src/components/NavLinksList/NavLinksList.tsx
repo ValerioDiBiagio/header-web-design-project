@@ -6,12 +6,14 @@ import "./NavLinkList.css"
 // items: un array di oggetti di tipo NavLinkProps.
 export type NavLinksListProps = {
     items: NavLinkProps[];
+    ariaLabel: string;
+    className?: string;
 };
 
 // Componente NavLinksList che accetta un array di items e li renderizza.
-export const NavLinksList = ({ items }: NavLinksListProps) => {
+export const NavLinksList = ({ items, ariaLabel }: NavLinksListProps) => {
     return (
-        <nav>
+        <nav aria-label={ariaLabel}>
             <ul className="list-items">
                 {/* Mappa l'array di items e crea un elemento <li> con un componente NavLink per ogni elemento. */}
                 {items.map((item, index) =>
