@@ -52,7 +52,41 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
     // Argomenti di default per questa storia
     args: {
-        label: "Home"
+        label: "Home",
+        state: 'default'
+    },
+    // Funzione che renderizza il componente con le props fornite
+    render: (args: NavLinkProps) => (
+        <NavLink {...args} />
+    )
+};
+
+export const Hover: Story = {
+    args: {
+        label: 'Home',
+        state: 'hover'
+    },
+    // Funzione che renderizza il componente con le props fornite
+    render: (args: NavLinkProps) => (
+        <NavLink {...args} />
+    )
+};
+
+export const Active: Story = {
+    args: {
+        label: 'Home',
+        state: 'active'
+    },
+    // Funzione che renderizza il componente con le props fornite
+    render: (args: NavLinkProps) => (
+        <NavLink {...args} />
+    )
+};
+
+export const Focus: Story = {
+    args: {
+        label: 'Home',
+        state: 'focus'
     },
     // Funzione che renderizza il componente con le props fornite
     render: (args: NavLinkProps) => (

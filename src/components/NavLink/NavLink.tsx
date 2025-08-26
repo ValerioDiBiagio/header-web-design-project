@@ -14,7 +14,7 @@ export type NavLinkProps = {
 
 // Definisce e esporta il componente funzionale NavLink
 // Destruttura le props `href`, `label` e `icon` dall'oggetto delle props
-export const NavLink = ({ label, icon, arialabel, onClick, state = 'default' }: NavLinkProps) => {
+export const NavLink = ({ label, icon, arialabel, onClick, state }: NavLinkProps) => {
     // Il componente restituisce un elemento `<button>`
     return (
         // L'attributo `href` viene impostato dinamicamente con il valore della prop `href`

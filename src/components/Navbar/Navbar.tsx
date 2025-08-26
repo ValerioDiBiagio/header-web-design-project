@@ -26,7 +26,7 @@ export const Navbar = ({ logoText, items }: NavbarProps) => {
                 <NavLinksList items={centerLinks} ariaLabel="Nav Menu" />
             </div>
 
-            {/* Sezione Destra per Wishlist e Cart */}
+            {/* Sezione Destra per Cart e User */}
             <div className="navbar-right">
                 <NavLinksList items={rightLinks} ariaLabel="Shop Menu" />
             </div>
