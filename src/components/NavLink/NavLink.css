@@ -20,13 +20,11 @@
     content: '';
     position: absolute;
     left: 50%;
-    /* Posiziona le linee al centro */
     width: 0;
     height: 2px;
     background-color: var(--color-positive-5);
     transition: width 0.3s ease-out;
     transform: translateX(-50%);
-    /* Assicura che rimangano centrate */
 }
 
 /* Bordo superiore */
@@ -39,16 +37,21 @@
     bottom: 0;
 }
 
-/* Effetto hover */
-.items:hover {
+/* Effetto hover e focus per gli elementi non selezionati */
+/* Questo stile si applica sia quando ci passi sopra con il mouse che quando riceve il focus dalla tastiera */
+.items:hover,
+.items:focus {
     color: var(--color-yellow-5);
+    outline: none;
+    /* Rimuove l'outline di default, sostituito dai bordi animati */
 }
 
-/* Animazione dei bordi all'hover */
+/* Animazione dei bordi all'hover e al focus */
 .items:hover::before,
-.items:hover::after {
+.items:hover::after,
+.items:focus::before,
+.items:focus::after {
     width: 100%;
-    /* Le linee si espandono per tutta la larghezza */
 }
 
 /* Stile per i link selezionati */
@@ -57,24 +60,27 @@
     font-weight: bold;
 }
 
-/* Disabilita gli effetti hover sui link selezionati */
-.items-selected:hover {
-    /* Reimposta il colore del testo a quello del selettore */
-    color: var(--color-positive-8);
-    /* Disabilita l'animazione dei bordi */
-    cursor: default;
-    /* Cambia il cursore per indicare che non è cliccabile */
-}
-
-.items-selected:hover::before,
-.items-selected:hover::after {
-    /* Reimposta la larghezza dei bordi a 0 */
-    width: 0;
-}
-
-/* Applica nuovamente i bordi per i link selezionati */
+/* I bordi sono sempre visibili quando il link è selezionato */
 .items-selected::before,
 .items-selected::after {
     width: 100%;
-    /* I bordi sono sempre visibili quando il link è selezionato */
+}
+
+/* Disabilita gli effetti hover e focus sui link selezionati */
+.items-selected:hover,
+.items-selected:focus {
+    color: var(--color-positive-8);
+    /* Mantiene il colore selezionato */
+    cursor: default;
+    /* Cambia il cursore per indicare che non è cliccabile di nuovo */
+    outline: none;
+}
+
+/* Assicura che i bordi non cambino all'hover/focus sui link selezionati */
+.items-selected:hover::before,
+.items-selected:hover::after,
+.items-selected:focus::before,
+.items-selected:focus::after {
+    width: 100%;
+    /* Mantiene la larghezza dei bordi al 100% */
 }
