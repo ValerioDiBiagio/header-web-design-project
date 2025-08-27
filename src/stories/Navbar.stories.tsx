@@ -3,6 +3,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Navbar } from '../components/Navbar/Navbar';
 import type { NavbarProps } from '../components/Navbar/Navbar';
 
+import { useState } from 'react';
+
 
 // Configurazione principale (meta) per lo story del componente Navbar
 const meta: Meta<typeof Navbar> = {
@@ -70,3 +72,58 @@ export const Default: Story = {
         return <Navbar {...args} />;
     }
 }
+
+
+export const Selected: Story = {
+    // Argomenti di default per questo story
+    args: {
+        logoText: "Logo",
+        items: [
+            { label: "Home", onClick: () => console.log("Home clicked"), selected: true },
+            { label: "Products", onClick: () => console.log("Products clicked") },
+            { label: "About", onClick: () => console.log("About clicked") },
+            { label: "Contacts", onClick: () => console.log("Contacts clicked") },
+            { label: "Cart", onClick: () => console.log("Cart clicked") },
+            { label: "User", onClick: () => console.log("User clicked") }
+        ],
+    },
+    // Funzione per il rendering del componente nello story
+    render: (args: NavbarProps) => {
+        // Passa gli argomenti al componente
+        return <Navbar {...args} />;
+    }
+}
+
+
+export const Navigation: Story = {
+
+    args: {
+        logoText: "Logo",
+        items: [
+            { label: "Home" },
+            { label: "Products" },
+            { label: "About" },
+            { label: "Contacts" },
+            { label: "Cart" },
+            { label: "User" }
+        ],
+    },
+
+    render: (args: NavbarProps) => {
+        // Modifica qui: imposta lo stato iniziale su null
+        const [selectedLink, setSelectedLink] = useState<string | null>(null);
+
+        const updatedItems = args.items.map(item => ({
+            ...item,
+            selected: selectedLink === item.label,
+            onClick: () => {
+                setSelectedLink(item.label);
+                if (item.onClick) {
+                    item.onClick();
+                }
+            }
+        }));
+
+        return <Navbar {...args} items={updatedItems} />;
+    },
+};

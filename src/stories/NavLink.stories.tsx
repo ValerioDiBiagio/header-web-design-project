@@ -2,6 +2,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { NavLink } from "../components/NavLink/NavLink";
 import type { NavLinkProps } from '../components/NavLink/NavLink';
+import { useState } from 'react';
 
 // Metadati di configurazione per il componente NavLink in Storybook
 const meta: Meta<typeof NavLink> = {
@@ -37,7 +38,12 @@ const meta: Meta<typeof NavLink> = {
             description: 'Nome o riferimento icona da mostrare accanto al testo (opzionale).'
         },
         onClick: {
+            action: "clicked",
             description: "Funzione chiamata quando l'utente clicca sul link (button)."
+        },
+        selected: {
+            control: 'boolean',
+            description: "Stato che seleziona il link."
         }
     }
 };
@@ -52,8 +58,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
     // Argomenti di default per questa storia
     args: {
-        label: "Home",
-        state: 'default'
+        label: "Home"
     },
     // Funzione che renderizza il componente con le props fornite
     render: (args: NavLinkProps) => (
@@ -61,35 +66,43 @@ export const Default: Story = {
     )
 };
 
-export const Hover: Story = {
+
+export const Selected: Story = {
     args: {
-        label: 'Home',
-        state: 'hover'
+        label: 'Home',  // Valore di default della prop label
+        selected: true // Stato Active
     },
-    // Funzione che renderizza il componente con le props fornite
-    render: (args: NavLinkProps) => (
-        <NavLink {...args} />
-    )
 };
 
-export const Active: Story = {
-    args: {
-        label: 'Home',
-        state: 'active'
-    },
-    // Funzione che renderizza il componente con le props fornite
-    render: (args: NavLinkProps) => (
-        <NavLink {...args} />
-    )
-};
+// Storia che simula una navigazione con stato
+export const Navigation: Story = {
+    render: () => {
+        // Definire lo stato per tracciare il link selezionato
+        const [selectedLink, setSelectedLink] = useState('Home');
 
-export const Focus: Story = {
-    args: {
-        label: 'Home',
-        state: 'focus'
-    },
-    // Funzione che renderizza il componente con le props fornite
-    render: (args: NavLinkProps) => (
-        <NavLink {...args} />
-    )
+        // Funzione per gestire il click e aggiornare lo stato
+        const handleLinkClick = (label: string) => {
+            setSelectedLink(label);
+        };
+
+        const links = [
+            { label: 'Home' },
+            { label: 'About' },
+            { label: 'Services' },
+            { label: 'Contact' }
+        ];
+
+        return (
+            <nav style={{ display: 'flex', gap: '20px' }}>
+                {links.map((link) => (
+                    <NavLink
+                        key={link.label}
+                        label={link.label}
+                        onClick={() => handleLinkClick(link.label)}
+                        selected={selectedLink === link.label}
+                    />
+                ))}
+            </nav>
+        );
+    }
 };

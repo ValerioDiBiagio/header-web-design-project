@@ -1,7 +1,80 @@
+/* Stile di base del bottone-link */
 .items {
+    background: none;
     border: none;
-    /* Rimuove il bordo dagli elementi */
-    background-color: transparent;
-    /* Rende lo sfondo trasparente */
     cursor: pointer;
+    color: var(--color-neutral-10);
+    text-decoration: none;
+    position: relative;
+    padding: 10px 15px;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    overflow: hidden;
+}
+
+/* Pseudo-elementi per i bordi superiore e inferiore */
+.items::before,
+.items::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    /* Posiziona le linee al centro */
+    width: 0;
+    height: 2px;
+    background-color: var(--color-positive-5);
+    transition: width 0.3s ease-out;
+    transform: translateX(-50%);
+    /* Assicura che rimangano centrate */
+}
+
+/* Bordo superiore */
+.items::before {
+    top: 0;
+}
+
+/* Bordo inferiore */
+.items::after {
+    bottom: 0;
+}
+
+/* Effetto hover */
+.items:hover {
+    color: var(--color-yellow-5);
+}
+
+/* Animazione dei bordi all'hover */
+.items:hover::before,
+.items:hover::after {
+    width: 100%;
+    /* Le linee si espandono per tutta la larghezza */
+}
+
+/* Stile per i link selezionati */
+.items-selected {
+    color: var(--color-positive-8);
+    font-weight: bold;
+}
+
+/* Disabilita gli effetti hover sui link selezionati */
+.items-selected:hover {
+    /* Reimposta il colore del testo a quello del selettore */
+    color: var(--color-positive-8);
+    /* Disabilita l'animazione dei bordi */
+    cursor: default;
+    /* Cambia il cursore per indicare che non è cliccabile */
+}
+
+.items-selected:hover::before,
+.items-selected:hover::after {
+    /* Reimposta la larghezza dei bordi a 0 */
+    width: 0;
+}
+
+/* Applica nuovamente i bordi per i link selezionati */
+.items-selected::before,
+.items-selected::after {
+    width: 100%;
+    /* I bordi sono sempre visibili quando il link è selezionato */
 }
