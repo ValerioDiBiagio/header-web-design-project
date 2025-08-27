@@ -7,43 +7,34 @@
     text-decoration: none;
     position: relative;
     padding: 10px 15px;
-    /* Transizione combinata per colore e ombra */
     transition: color 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     align-items: center;
     gap: 5px;
     overflow: hidden;
+    /* Inizializza box-shadow a zero. */
+    box-shadow: none;
 }
 
-/* Stile per i link selezionati */
-.items-selected {
-    color: var(--color-trust-blue-11);
-    font-weight: bold;
-    /* Bordo superiore e inferiore visibili */
-    box-shadow:
-        inset 0 2px 0 0 var(--color-trust-blue-5),
-        inset 0 -2px 0 0 var(--color-trust-blue-5);
-}
-
-/* Effetto hover e focus per gli elementi non selezionati */
-/* Questo stile si applica sia quando ci passi sopra con il mouse che quando riceve il focus dalla tastiera */
-.items:hover,
-.items:focus {
+/* Stile per i link non selezionati in stato di hover e focus. */
+/* Questo selettore dice al browser di applicare lo stile solo se l'elemento NON ha la classe items-selected. */
+.items:hover {
     color: var(--color-vibrant-yellow-5);
     outline: none;
-    /* Bordo animato che si espande dal centro */
     box-shadow:
         inset 0 2px 0 0 var(--color-trust-blue-5),
         inset 0 -2px 0 0 var(--color-trust-blue-5);
 }
 
-/* Disabilita gli effetti hover e focus sui link selezionati */
+/* Stile per i link selezionati. Questo blocco unisce TUTTI gli stati.
+   Poiché viene dopo, ha la priorità sulla regola hover precedente. */
+.items-selected,
 .items-selected:hover,
 .items-selected:focus {
     color: var(--color-trust-blue-11);
+    font-weight: bold;
     cursor: default;
     outline: none;
-    /* Mantiene i bordi del box-shadow al 100% */
     box-shadow:
         inset 0 2px 0 0 var(--color-trust-blue-5),
         inset 0 -2px 0 0 var(--color-trust-blue-5);

@@ -2,23 +2,24 @@ import { NavLink } from "../NavLink/NavLink";
 import type { NavLinkProps } from '../NavLink/NavLink';
 import "./NavLinkList.css"
 
-// Definisce il tipo delle proprietà del componente NavLinksList.
-// items: un array di oggetti di tipo NavLinkProps.
+// Aggiungi le prop opzionali `selected` e `onClick` al tipo degli items.
 export type NavLinksListProps = {
-    items: NavLinkProps[];
+    items: (NavLinkProps & { selected?: boolean; onClick?: () => void })[];
     ariaLabel: string;
     className?: string;
 };
 
-// Componente NavLinksList che accetta un array di items e li renderizza.
 export const NavLinksList = ({ items, ariaLabel }: NavLinksListProps) => {
+
+
+
     return (
         <nav aria-label={ariaLabel}>
             <ul className="list-items">
-                {/* Mappa l'array di items e crea un elemento <li> con un componente NavLink per ogni elemento. */}
                 {items.map((item, index) =>
-                    <li key={index} > {/* La chiave è importante per le liste in React. */}
-                        <NavLink {...item} /> {/* Passa tutte le proprietà del link al componente NavLink. */}
+                    <li key={index} >
+                        {/* Passa tutte le proprietà del link al componente NavLink. */}
+                        <NavLink {...item} />
                     </li>)}
             </ul>
         </nav>
