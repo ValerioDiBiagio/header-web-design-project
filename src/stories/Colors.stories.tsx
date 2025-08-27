@@ -38,9 +38,9 @@ export const Default: Story = {
             <div className="container">
                 {Array.from({ length: 16 }).map((_, i) => (
                     <ClickToCopy
-                        style={{ backgroundColor: `var(--color-neutral-${i})` }}
+                        style={{ backgroundColor: `var(--color-blue-gray-${i})` }}
                         key={i}
-                        value={`--color-neutral-${i}`}
+                        value={`--color-blue-gray-${i}`}
                     />
                 ))}
             </div>
@@ -50,9 +50,9 @@ export const Default: Story = {
             <div className="container">
                 {Array.from({ length: 16 }).map((_, i) => (
                     <ClickToCopy
-                        style={{ backgroundColor: `var(--color-yellow-${i})` }}
+                        style={{ backgroundColor: `var(--color-vibrant-yellow-${i})` }}
                         key={i}
-                        value={`--color-yellow-${i}`}
+                        value={`--color-vibrant-yellow-${i}`}
                     />
                 ))}
             </div>
@@ -62,9 +62,9 @@ export const Default: Story = {
             <div className="container">
                 {Array.from({ length: 16 }).map((_, i) => (
                     <ClickToCopy
-                        style={{ backgroundColor: `var(--color-positive-${i})` }}
+                        style={{ backgroundColor: `var(--color-trust-blue-${i})` }}
                         key={i}
-                        value={`--color-positive-${i}`}
+                        value={`--color-trust-blue-${i}`}
                     />
                 ))}
             </div>

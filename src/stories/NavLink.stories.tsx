@@ -2,7 +2,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { NavLink } from "../components/NavLink/NavLink";
 import type { NavLinkProps } from '../components/NavLink/NavLink';
-import { useState } from 'react';
 
 // Metadati di configurazione per il componente NavLink in Storybook
 const meta: Meta<typeof NavLink> = {
@@ -72,37 +71,4 @@ export const Selected: Story = {
         label: 'Home',  // Valore di default della prop label
         selected: true // Stato Active
     },
-};
-
-// Storia che simula una navigazione con stato
-export const Navigation: Story = {
-    render: () => {
-        // Definire lo stato per tracciare il link selezionato
-        const [selectedLink, setSelectedLink] = useState('Home');
-
-        // Funzione per gestire il click e aggiornare lo stato
-        const handleLinkClick = (label: string) => {
-            setSelectedLink(label);
-        };
-
-        const links = [
-            { label: 'Home' },
-            { label: 'About' },
-            { label: 'Services' },
-            { label: 'Contact' }
-        ];
-
-        return (
-            <nav style={{ display: 'flex', gap: '20px' }}>
-                {links.map((link) => (
-                    <NavLink
-                        key={link.label}
-                        label={link.label}
-                        onClick={() => handleLinkClick(link.label)}
-                        selected={selectedLink === link.label}
-                    />
-                ))}
-            </nav>
-        );
-    }
 };
