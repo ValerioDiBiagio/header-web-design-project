@@ -89,6 +89,10 @@
     --color-vibrant-yellow-14: oklch(15% 0.06 var(--hue-vibrant-yellow));
     --color-vibrant-yellow-15: oklch(10% 0.03 var(--hue-vibrant-yellow));
 
+    /* Colori dark mode */
+    --color-neutral-bcg: light-dark(var(--color-blue-gray-0), var(--color-blue-gray-12));
+    --color-neutral-text: light-dark(var(--color-blue-gray-12), var(--color-blue-gray-0));
+
     /* Aggiungi anche la definizione dell'hue se non è già presente */
     --hue-vibrant-yellow: 60;
 
