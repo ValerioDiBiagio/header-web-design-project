@@ -19,10 +19,11 @@ type IconProps = {
     name: IconName;
     className?: string;
     size?: string;
+    ariaLabel?: string;
 };
 
 // Componente funzionale Icon
-export const Icon = ({ name, size, ...props }: IconProps) => {
+export const Icon = ({ name, size, ariaLabel, ...props }: IconProps) => {
     const iconToRender = icons[name];
 
     // Controlla se l'icona esiste nella mappa prima di renderizzarla

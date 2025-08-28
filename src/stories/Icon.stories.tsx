@@ -19,6 +19,10 @@ const meta: Meta<typeof Icon> = {
             control: "text",
             description: "Dimensione dell'icona (es. '1.5rem', '32px')"
         },
+        ariaLabel: {
+            control: 'text',
+            description: 'Etichetta per l\'accessibilità, fondamentale per gli screen reader.',
+        },
     },
     parameters: {
         layout: 'centered',
@@ -35,17 +39,19 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // Storia che mostra tutte le icone insieme
+// AllIcons
+
 export const AllIcons: Story = {
     render: () => (
         <div style={{ display: 'flex', gap: '20px' }}>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', fontSize: '1.5rem' }}>
-                <Icon name="home" />
+                <Icon name="home" ariaLabel="Icona Home" />
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', fontSize: '1.5rem' }}>
-                <Icon name="cart" />
+                <Icon name="cart" ariaLabel="Icona Carrello" />
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', fontSize: '1.5rem' }}>
-                <Icon name="user" />
+                <Icon name="user" ariaLabel="Icona Utente" />
             </div>
         </div>
     ),
@@ -55,7 +61,8 @@ export const AllIcons: Story = {
 export const DefaultHome: Story = {
     args: {
         name: 'home',
-        size: '1.5rem'
+        size: '1.5rem',
+        ariaLabel: 'Icona Home'
     },
 
 };
@@ -64,7 +71,8 @@ export const DefaultHome: Story = {
 export const DefaultCart: Story = {
     args: {
         name: 'cart',
-        size: '1.5rem'
+        size: '1.5rem',
+        ariaLabel: 'Icona Carrello'
     },
 };
 
@@ -72,6 +80,7 @@ export const DefaultCart: Story = {
 export const DefaultUser: Story = {
     args: {
         name: 'user',
-        size: '1.5rem'
+        size: '1.5rem',
+        ariaLabel: 'Icona Utente'
     },
 };

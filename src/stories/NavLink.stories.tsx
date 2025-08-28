@@ -92,7 +92,7 @@ export const IconOnly: Story = {
     args: {
         label: '',
         icon: <Icon name="home" />, // Usa il componente Icon
-        arialabel: "Cerca"
+        arialabel: "Icona Home"
     },
     render: (args: NavLinkProps) => (
         <NavLink {...args} />
