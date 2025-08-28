@@ -2,6 +2,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { NavLink } from "../components/NavLink/NavLink";
 import type { NavLinkProps } from '../components/NavLink/NavLink';
+import { Icon } from '../components/Icon/Icon';
 
 // Metadati di configurazione per il componente NavLink in Storybook
 const meta: Meta<typeof NavLink> = {
@@ -71,4 +72,29 @@ export const Selected: Story = {
         label: 'Home',  // Valore di default della prop label
         selected: true // Stato Active
     },
+    // Funzione che renderizza il componente con le props fornite
+    render: (args: NavLinkProps) => (
+        <NavLink {...args} />
+    )
+};
+
+export const WithIconAndText: Story = {
+    args: {
+        label: 'Home',
+        icon: <Icon name="home" />, // Usa il componente Icon
+    },
+    render: (args: NavLinkProps) => (
+        <NavLink {...args} />
+    )
+};
+
+export const IconOnly: Story = {
+    args: {
+        label: '',
+        icon: <Icon name="home" />, // Usa il componente Icon
+        arialabel: "Cerca"
+    },
+    render: (args: NavLinkProps) => (
+        <NavLink {...args} />
+    )
 };

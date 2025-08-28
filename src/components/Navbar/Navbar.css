@@ -8,7 +8,7 @@
     width: 100%;
     /* Assicura che la navbar occupi l'intera larghezza */
     padding: 20px;
-    background-color: light-dark(var(--color-blue-gray-1), var(--color-blue-gray-10));
+    background-color: light-dark(var(--color-blue-gray-0), var(--color-blue-gray-15));
 }
 
 .list-items {

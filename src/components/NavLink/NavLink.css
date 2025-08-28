@@ -3,7 +3,8 @@
     background: none;
     border: none;
     cursor: pointer;
-    color: var(--color-blue-gray-10);
+    /* Colore del testo: Usa un colore molto chiaro per un contrasto adeguato */
+    color: light-dark(var(--color-blue-gray-10), var(--color-blue-gray-0));
     text-decoration: none;
     position: relative;
     padding: 10px 15px;
@@ -12,26 +13,25 @@
     align-items: center;
     gap: 5px;
     overflow: hidden;
-    /* Inizializza box-shadow a zero. */
     box-shadow: none;
 }
 
 /* Stile per i link non selezionati in stato di hover e focus. */
-/* Questo selettore dice al browser di applicare lo stile solo se l'elemento NON ha la classe items-selected. */
 .items:hover {
-    color: var(--color-vibrant-yellow-5);
+    /* Colore al passaggio del mouse: Usa un giallo più scuro per il contrasto */
+    color: light-dark(var(--color-vibrant-yellow-8), var(--color-vibrant-yellow-2));
     outline: none;
     box-shadow:
         inset 0 2px 0 0 var(--color-trust-blue-5),
         inset 0 -2px 0 0 var(--color-trust-blue-5);
 }
 
-/* Stile per i link selezionati. Questo blocco unisce TUTTI gli stati.
-   Poiché viene dopo, ha la priorità sulla regola hover precedente. */
+/* Stile per i link selezionati. */
 .items-selected,
 .items-selected:hover,
 .items-selected:focus {
-    color: var(--color-trust-blue-11);
+    /* Questa combinazione è già accessibile */
+    color: light-dark(var(--color-trust-blue-9), var(--color-blue-gray-0));
     font-weight: bold;
     cursor: default;
     outline: none;
