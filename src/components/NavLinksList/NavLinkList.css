@@ -15,6 +15,6 @@
 
 /* Stili aggiuntivi per i link all'interno della navbar */
 .list-items li {
-    padding: 10px 15px;
+    padding: 10px 0px;
     /* Aggiunge padding per dare respiro ai link */
 }

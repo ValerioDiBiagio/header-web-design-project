@@ -1,46 +1,237 @@
+/* Stili di base per il contenitore della navbar */
 .navbar-container {
     display: flex;
-    /* Attiva Flexbox sul contenitore principale */
     justify-content: space-between;
-    /* Centra orizzontalmente il contenuto */
     align-items: center;
-    /* Allinea verticalmente gli elementi */
     width: 100%;
-    /* Assicura che la navbar occupi l'intera larghezza */
     padding: 20px;
     background-color: light-dark(var(--color-blue-gray-0), var(--color-blue-gray-15));
+    position: relative;
 }
 
 .list-items {
     display: flex;
-    /* Rende la lista un contenitore Flexbox */
     justify-content: center;
-    /* Centra orizzontalmente i link */
     list-style: none;
-    /* Rimuove i puntini della lista */
     padding: 0;
     margin: 0;
     gap: 20px;
-    /* Aggiunge uno spazio tra ogni voce del menu */
 }
 
 .navbar-left,
 .navbar-right,
 .navbar-center {
     display: flex;
-    /* Rende ogni sezione un contenitore flex */
     align-items: center;
-    /* Allinea verticalmente gli elementi all'interno */
+    justify-content: center;
 }
 
-/* Stile per la sezione centrale (con logo e link principali) */
+/* Stili per il logo */
+#logo {
+    margin: auto;
+}
+
 .navbar-center {
     flex-direction: column;
-    /* Dispone il logo e il menu in colonna */
     flex-grow: 1;
-    /* Permette a questa sezione di occupare tutto lo spazio disponibile */
     justify-content: center;
-    /* Centra il suo contenuto */
     gap: 15px;
-    /* Spazio tra il logo e la lista di link */
+    text-align: center;
+}
+
+.navbar-left {
+    justify-content: flex-start;
+}
+
+.navbar-right {
+    justify-content: flex-end;
+}
+
+/* Stili per il pulsante del menu hamburger (nascosto di default) */
+.hamburger-menu {
+    display: none;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* Stili per l'overlay del menu mobile (nascosto di default) */
+.mobile-menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    padding-top: 60px;
+    transition: transform 0.3s ease-in-out;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Classe per attivare l'overlay */
+.mobile-menu-overlay.active {
+    display: flex;
+    transform: translateX(0);
+}
+
+.mobile-nav-list .list-items {
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+    align-items: center;
+}
+
+.mobile-nav-list .items {
+    padding: 15px 0;
+}
+
+/* Stili per il menu desktop */
+.desktop-nav-links {
+    display: flex;
+}
+
+.items {
+    padding: 10px 2px;
+}
+
+
+/* Stili per nascondere il testo visivamente ma renderlo disponibile per i lettori di schermo */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .list-items {
+        gap: 20px;
+    }
+
+    .hamburger-menu,
+    .mobile-menu-overlay {
+        display: none;
+    }
+
+    .navbar-container {
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 15px;
+    }
+
+    .navbar-center {
+        display: flex;
+        flex-grow: 1;
+        justify-content: center;
+        order: 2;
+    }
+
+    .navbar-right {
+        display: flex;
+        order: 3;
+    }
+
+    .navbar-right .items span:nth-child(2),
+    .navbar-left .items span:nth-child(2) {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: block;
+        order: 1;
+    }
+
+    .desktop-nav-links {
+        display: none;
+    }
+
+    .mobile-menu-overlay {
+        display: flex;
+        transform: translateX(100%);
+    }
+
+    .mobile-menu-overlay.active {
+        transform: translateX(0);
+    }
+
+    .navbar-container {
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 15px;
+    }
+
+    .navbar-left {
+        display: flex;
+        order: 1;
+    }
+
+    .navbar-center {
+        display: flex;
+        flex-grow: 1;
+        justify-content: center;
+        order: 2;
+    }
+
+    .navbar-center .list-items {
+        display: none;
+    }
+
+    .navbar-right {
+        display: flex;
+        order: 3;
+    }
+
+    .navbar-left .items {
+        display: none;
+    }
+
+    .navbar-right .items span:nth-child(2) {
+        display: none;
+    }
+
+    .navbar-right .list-items {
+        gap: 0;
+    }
+
+    .mobile-nav-list .list-items {
+        flex-direction: column;
+        width: 100%;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .nav-items.mobile-nav-list .icon {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .hamburger-menu {
+        width: 4rem;
+    }
+
+    .navbar-center {
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar-container {
+        justify-content: center;
+    }
+
+    .icon {
+        width: 2rem;
+    }
 }

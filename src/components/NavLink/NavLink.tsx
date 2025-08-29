@@ -12,19 +12,20 @@ export type NavLinkProps = {
     selected?: boolean;
 };
 
-// Definisce e esporta il componente funzionale NavLink
-// Destruttura le props `href`, `label` e `icon` dall'oggetto delle props
-export const NavLink = ({ label, icon, arialabel, onClick, selected }: NavLinkProps) => {
+// Destruttura le props `label`, `icon`, `onClick` e `selected` dall'oggetto delle props
+export const NavLink = ({ label, icon, onClick, selected }: NavLinkProps) => {
     // Il componente restituisce un elemento `<button>`
     return (
-        // L'attributo `href` viene impostato dinamicamente con il valore della prop `href`
-        <button onClick={onClick} aria-label={arialabel} className={`items ${selected ? "items-selected" : ""}`}>
-            {/* Renderizza lo `span` contenente l'icona solo se la prop `icon` è presente.
-                Questa è una renderizzazione condizionale.
-            */}
+        // Utilizza `label` come valore per l'attributo `aria-label`
+        <button
+            onClick={onClick}
+            aria-label={label}
+            className={`items ${selected ? "items-selected" : ""}`}
+        >
+            {/* Renderizza un <div> contenente l'icona solo se la prop `icon` è presente. */}
+            {icon && <div className='icon'>{icon}</div>}
 
-            {icon && <span>{icon}</span>}
-            {/* Renderizza un altro `span` per il testo della label */}
+            {/* Renderizza uno <span> per il testo della label */}
             <span>{label}</span>
         </button>
     );

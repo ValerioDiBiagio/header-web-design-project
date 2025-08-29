@@ -40,12 +40,12 @@ export const Default: Story = {
     args: {
         // Valore di default per l'array di items
         items: [
-            { label: "Home", onClick: () => console.log("Home clicked") },
-            { label: "Products", onClick: () => console.log("Products clicked") },
-            { label: "About", onClick: () => console.log("About clicked") },
-            { label: "Contacts", onClick: () => console.log("Contacts clicked") },
-            { label: "Cart", onClick: () => console.log("Cart clicked") },
-            { label: "User", onClick: () => console.log("User clicked") }
+            { label: "Home", onClick: () => console.log("Home clicked"), arialabel: "Home" },
+            { label: "Products", onClick: () => console.log("Products clicked"), arialabel: "Prodotti" },
+            { label: "About", onClick: () => console.log("About clicked"), arialabel: "Chi siamo" },
+            { label: "Contacts", onClick: () => console.log("Contacts clicked"), arialabel: "Contatti" },
+            { label: "Cart", onClick: () => console.log("Cart clicked"), arialabel: "Carrello" },
+            { label: "User", onClick: () => console.log("User clicked"), arialabel: "User" }
         ],
     },
 
