@@ -1,0 +1,15 @@
+#logo {
+    color: light-dark(var(--color-trust-blue-11), var(--color-trust-blue-1));
+    font-size: var(--font-size-h4);
+    font-weight: bold;
+}
+
+.icona {
+    color: light-dark(var(--color-vibrant-yellow-8), var(--color-vibrant-yellow-2));
+}
+
+@media (max-width: 576px) {
+    #logo {
+        font-size: var(--font-size-h6);
+    }
+}

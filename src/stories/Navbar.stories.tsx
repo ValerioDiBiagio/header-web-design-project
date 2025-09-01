@@ -99,7 +99,7 @@ export const Selected: Story = {
 export const Navigation: Story = {
 
     args: {
-        logoText: "Logo",
+        logoText: "TechLoom",
         items: [
             { label: "Home" },
             { label: "Informatica" },

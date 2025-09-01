@@ -1,3 +1,7 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHexagonNodes } from '@fortawesome/free-solid-svg-icons';
+import "./Logo.css";
+
 export type logoProps = {
     text: string;
 }
@@ -9,6 +13,8 @@ export const Logo = ({ text }: logoProps) => {
     // Il componente restituisce un elemento JSX.
     return (
         // Il testo passato tramite le props viene inserito all'interno del 'div'.
-        <div id="logo">{text}</div>
+        <div id="logo">
+            <FontAwesomeIcon className='icona' icon={faHexagonNodes} />{text}
+        </div>
     )
 }
