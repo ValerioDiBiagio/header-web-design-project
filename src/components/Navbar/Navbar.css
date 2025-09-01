@@ -4,18 +4,9 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 20px;
+    padding: var(--spacing-md);
     background-color: light-dark(var(--color-blue-gray-1), var(--color-blue-gray-15));
     position: relative;
-}
-
-.list-items {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    gap: 20px;
 }
 
 .navbar-left,
@@ -35,7 +26,7 @@
     flex-direction: column;
     flex-grow: 1;
     justify-content: center;
-    gap: 15px;
+    gap: var(--spacing-md);
     text-align: center;
 }
 
@@ -60,8 +51,8 @@
 /* Stili per il pulsante di chiusura del menu mobile */
 .close-menu-button {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: var(--spacing-lg);
+    right: var(--spacing-lg);
     font-size: 1.5rem;
     color: light-dark(var(--color-blue-gray-10), var(--color-blue-gray-0));
     background: none;
@@ -78,23 +69,12 @@
     display: block;
 }
 
-/* Aggiunta questa regola per nascondere il pulsante hamburger su mobile quando il menu è aperto */
-@media (max-width: 768px) {
-    .hamburger-menu {
-        display: block;
-    }
-
-    .mobile-menu-overlay.active+.navbar-container .hamburger-menu {
-        display: none;
-    }
-}
-
 /* Stili per l'overlay del menu mobile (nascosto di default) */
 .mobile-menu-overlay {
     display: none;
     position: fixed;
-    top: 0;
-    left: 0;
+    top: var(--spacing-zero);
+    left: var(--spacing-zero);
     width: 100%;
     height: 100%;
     background-color: light-dark(var(--color-blue-gray-1), var(--color-blue-gray-15));
@@ -114,21 +94,17 @@
 .mobile-nav-list .list-items {
     flex-direction: column;
     width: 100%;
-    gap: 20px;
+    gap: var(--spacing-lg);
     align-items: center;
 }
 
 .mobile-nav-list .items {
-    padding: 15px 0;
+    padding: var(--spacing-md) var(--spacing-zero);
 }
 
 /* Stili per il menu desktop */
 .desktop-nav-links {
     display: flex;
-}
-
-.items {
-    padding: 10px 0;
 }
 
 
@@ -137,7 +113,7 @@
     position: absolute;
     width: 1px;
     height: 1px;
-    padding: 0;
+    padding: var(--spacing-zero);
     margin: -1px;
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
@@ -146,9 +122,6 @@
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-    .list-items {
-        gap: 20px;
-    }
 
     .hamburger-menu,
     .mobile-menu-overlay {
@@ -158,7 +131,7 @@
     .navbar-container {
         justify-content: space-between;
         align-items: center;
-        padding: 10px 15px;
+        padding: var(--spacing-sm) var(--spacing-md);
     }
 
     .navbar-center {
@@ -205,7 +178,7 @@
     .navbar-container {
         justify-content: space-between;
         align-items: center;
-        padding: 10px 15px;
+        padding: var(--spacing-sm) var(--spacing-md);
     }
 
     .navbar-left {
@@ -238,18 +211,30 @@
     }
 
     .navbar-right .list-items {
-        gap: 0;
+        gap: var(--spacing-xs);
     }
 
     .mobile-nav-list .list-items {
         flex-direction: column;
         width: 100%;
-        gap: 0px;
+        gap: var(--spacing-zero);
         align-items: center;
     }
 
     .nav-items.mobile-nav-list .icon {
         display: none;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .mobile-menu-overlay.active+.navbar-container .hamburger-menu {
+        display: none;
+    }
+
+    .items {
+        padding: var(--spacing-sm) var(--spacing-zero);
     }
 }
 

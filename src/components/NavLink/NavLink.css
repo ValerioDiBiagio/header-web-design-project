@@ -6,11 +6,11 @@
     color: light-dark(var(--color-blue-gray-10), var(--color-blue-gray-0));
     text-decoration: none;
     position: relative;
-    padding: var(--spacing-md);
+    padding: var(--spacing-xs);
     transition: color 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     align-items: center;
-    gap: var(--spacing-sm);
+    gap: var(--spacing-xs);
     overflow: hidden;
     box-shadow: none;
     font-weight: bold;
@@ -47,7 +47,7 @@
 .items-selected,
 .items-selected:hover,
 .items-selected:focus {
-    color: light-dark(var(--color-trust-blue-11), var(--color-blue-gray-0));
+    color: light-dark(var(--color-trust-blue-11), var(--color-trust-blue-1));
     font-weight: bold;
     cursor: default;
     outline: none;
