@@ -1,5 +1,7 @@
 import type { Preview } from '@storybook/react-vite'
 import { withThemeByClassName } from "@storybook/addon-themes";
+// .storybook/preview.ts
+import '@fortawesome/fontawesome-svg-core/styles.css';
 
 
 import "../src/styles/reset.css";
