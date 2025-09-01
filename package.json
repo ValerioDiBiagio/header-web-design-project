@@ -15,7 +15,7 @@
     "@fortawesome/fontawesome-svg-core": "^7.0.0",
     "@fortawesome/free-brands-svg-icons": "^7.0.0",
     "@fortawesome/free-solid-svg-icons": "^7.0.0",
-    "@fortawesome/react-fontawesome": "^3.0.1",
+    "@fortawesome/react-fontawesome": "^3.0.2",
     "@heroicons/react": "^2.2.0",
     "@storybook/addon-essentials": "^9.0.0-alpha.9",
     "@storybook/addon-themes": "^9.1.3",
