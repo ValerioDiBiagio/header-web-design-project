@@ -8,7 +8,13 @@
     color: light-dark(var(--color-vibrant-yellow-8), var(--color-vibrant-yellow-2));
 }
 
-@media (max-width: 576px) {
+@media (max-width: 480px) {
+    #logo {
+        font-size: var(--font-size-h5);
+    }
+}
+
+@media (max-width: 320px) {
     #logo {
         font-size: var(--font-size-h6);
     }
