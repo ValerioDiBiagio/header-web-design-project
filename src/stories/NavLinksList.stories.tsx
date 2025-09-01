@@ -41,11 +41,12 @@ export const Default: Story = {
         // Valore di default per l'array di items
         items: [
             { label: "Home", onClick: () => console.log("Home clicked"), arialabel: "Home" },
-            { label: "Products", onClick: () => console.log("Products clicked"), arialabel: "Prodotti" },
-            { label: "About", onClick: () => console.log("About clicked"), arialabel: "Chi siamo" },
-            { label: "Contacts", onClick: () => console.log("Contacts clicked"), arialabel: "Contatti" },
-            { label: "Cart", onClick: () => console.log("Cart clicked"), arialabel: "Carrello" },
-            { label: "User", onClick: () => console.log("User clicked"), arialabel: "User" }
+            { label: "Informatica", onClick: () => console.log("Informatica clicked"), arialabel: "Informatica" },
+            { label: "Telefonia", onClick: () => console.log("Telefonia clicked"), arialabel: "Telefonia" },
+            { label: "Gaming", onClick: () => console.log("Gaming clicked"), arialabel: "Gaming" },
+            { label: "Elettrodomestici", onClick: () => console.log("Elettrodomestici clicked"), arialabel: "Elettrodomestici" },
+            { label: "Carrello", onClick: () => console.log("Carrello clicked"), arialabel: "Carrello" },
+            { label: "Utente", onClick: () => console.log("Utente clicked"), arialabel: "Utente" }
         ],
     },
 

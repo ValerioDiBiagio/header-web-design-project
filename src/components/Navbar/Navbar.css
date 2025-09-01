@@ -57,6 +57,38 @@
     z-index: 1001;
 }
 
+/* Stili per il pulsante di chiusura del menu mobile */
+.close-menu-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1.5rem;
+    color: light-dark(var(--color-blue-gray-10), var(--color-blue-gray-0));
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1002;
+    display: none;
+    width: 2rem;
+    /* Nascosto di default */
+}
+
+/* Aggiungi questa regola per mostrare il pulsante di chiusura quando l'overlay è attivo */
+.mobile-menu-overlay.active .close-menu-button {
+    display: block;
+}
+
+/* Aggiunta questa regola per nascondere il pulsante hamburger su mobile quando il menu è aperto */
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: block;
+    }
+
+    .mobile-menu-overlay.active+.navbar-container .hamburger-menu {
+        display: none;
+    }
+}
+
 /* Stili per l'overlay del menu mobile (nascosto di default) */
 .mobile-menu-overlay {
     display: none;
@@ -65,7 +97,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: light-dark(var(--color-blue-gray-0), var(--color-blue-gray-15));
     z-index: 1000;
     padding-top: 60px;
     transition: transform 0.3s ease-in-out;
@@ -96,7 +128,7 @@
 }
 
 .items {
-    padding: 10px 2px;
+    padding: 10px 0;
 }
 
 
@@ -208,7 +240,7 @@
     .mobile-nav-list .list-items {
         flex-direction: column;
         width: 100%;
-        gap: 20px;
+        gap: 0px;
         align-items: center;
     }
 
@@ -219,7 +251,7 @@
 
 @media (max-width: 576px) {
     .hamburger-menu {
-        width: 4rem;
+        width: 2rem;
     }
 
     .navbar-center {

@@ -58,11 +58,12 @@ export const Default: Story = {
         logoText: "Logo",
         items: [
             { label: "Home", onClick: () => console.log("Home clicked") },
-            { label: "Products", onClick: () => console.log("Products clicked") },
-            { label: "About", onClick: () => console.log("About clicked") },
-            { label: "Contacts", onClick: () => console.log("Contacts clicked") },
-            { label: "Cart", onClick: () => console.log("Cart clicked") },
-            { label: "User", onClick: () => console.log("User clicked") }
+            { label: "Informatica", onClick: () => console.log("Informatica clicked") },
+            { label: "Telefonia", onClick: () => console.log("Telefonia clicked") },
+            { label: "Gaming", onClick: () => console.log("Gaming clicked") },
+            { label: "Elettrodomestici", onClick: () => console.log("Elettrodomestici clicked") },
+            { label: "Carrello", onClick: () => console.log("Carrello clicked") },
+            { label: "Utente", onClick: () => console.log("Utente clicked") }
         ],
     },
     // Funzione per il rendering del componente nello story
@@ -79,11 +80,12 @@ export const Selected: Story = {
         logoText: "Logo",
         items: [
             { label: "Home", onClick: () => console.log("Home clicked"), selected: true },
-            { label: "Products", onClick: () => console.log("Products clicked") },
-            { label: "About", onClick: () => console.log("About clicked") },
-            { label: "Contacts", onClick: () => console.log("Contacts clicked") },
-            { label: "Cart", onClick: () => console.log("Cart clicked") },
-            { label: "User", onClick: () => console.log("User clicked") }
+            { label: "Informatica", onClick: () => console.log("Informatica clicked") },
+            { label: "Telefonia", onClick: () => console.log("Telefonia clicked") },
+            { label: "Gaming", onClick: () => console.log("Gaming clicked") },
+            { label: "Elettrodomestici", onClick: () => console.log("Elettrodomestici clicked") },
+            { label: "Carrello", onClick: () => console.log("Carrello clicked") },
+            { label: "Utente", onClick: () => console.log("Utente clicked") }
         ],
     },
     // Funzione per il rendering del componente nello story
@@ -100,11 +102,12 @@ export const Navigation: Story = {
         logoText: "Logo",
         items: [
             { label: "Home" },
-            { label: "Products" },
-            { label: "About" },
-            { label: "Contacts" },
-            { label: "Cart" },
-            { label: "User" }
+            { label: "Informatica" },
+            { label: "Telefonia" },
+            { label: "Gaming" },
+            { label: "Elettrodomestici" },
+            { label: "Carrello" },
+            { label: "Utente" }
         ],
     },
 

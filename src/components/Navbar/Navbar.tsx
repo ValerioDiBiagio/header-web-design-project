@@ -1,3 +1,4 @@
+// ... (omissis)
 import { useState } from 'react';
 import { Logo } from "../Logo/Logo";
 import { NavLinksList, type NavLinksListProps } from "../NavLinksList/NavLinksList";
@@ -31,13 +32,12 @@ export const Navbar = ({ logoText, items }: NavbarProps) => {
         setIsMenuOpen(!isMenuOpen);
     };
 
-    // Aggiungi le icone a tutti i link rilevanti
     const updatedItems = items.map(item => {
         const newItem = { ...item };
-        if (newItem.label === 'Cart') {
+        if (newItem.label === 'Carrello') {
             newItem.icon = <FontAwesomeIcon icon={faShoppingCart} />;
         }
-        if (newItem.label === 'User') {
+        if (newItem.label === 'Utente') {
             newItem.icon = <FontAwesomeIcon icon={faUser} />;
         }
         if (newItem.label === 'Home') {
@@ -48,15 +48,14 @@ export const Navbar = ({ logoText, items }: NavbarProps) => {
         return newItem;
     });
 
-    // Separa i link per i diversi layout
-    const mainLinks = updatedItems.filter(item => ['Home', 'Products', 'About', 'Contacts'].includes(item.label));
-    const homeLink = mainLinks.find(item => item.label === 'Home'); // Cerca il link "Home" separatamente
-    const centerLinks = mainLinks.filter(item => item.label !== 'Home'); // Filtra il resto
-    const rightLinks = updatedItems.filter(item => ['Cart', 'User'].includes(item.label));
+    const mainLinks = updatedItems.filter(item => ['Home', 'Informatica', 'Telefonia', 'Gaming', 'Elettrodomestici'].includes(item.label));
+    const homeLink = mainLinks.find(item => item.label === 'Home');
+    const centerLinks = mainLinks.filter(item => item.label !== 'Home');
+    const rightLinks = updatedItems.filter(item => ['Carrello', 'Utente'].includes(item.label));
 
     return (
         <header className="navbar-container">
-            {/* Div di sinistra: contiene solo il pulsante del menu hamburger su mobile */}
+            {/* Div di sinistra: contiene solo il pulsante del menu hamburger */}
             <div className="navbar-left">
                 <button
                     className="hamburger-menu"
@@ -64,16 +63,16 @@ export const Navbar = ({ logoText, items }: NavbarProps) => {
                     aria-expanded={isMenuOpen}
                     aria-controls="mobile-nav-menu"
                     aria-label="Apri menu">
-                    {isMenuOpen ? <FontAwesomeIcon icon={faTimes} /> : <FontAwesomeIcon icon={faBars} />}
+                    {/* Renderizza l'icona hamburger solo se il menu è chiuso */}
+                    {!isMenuOpen && <FontAwesomeIcon icon={faBars} />}
                 </button>
-                {/* Il link "Home" per il desktop rimane qui, nascosto su mobile via CSS */}
                 {homeLink && (
                     <NavLinksList items={[homeLink]} ariaLabel="Home Menu" className="desktop-nav-links" />
                 )}
                 <span className="sr-only">Apri menu</span>
             </div>
 
-            {/* Div centrale: contiene il logo e i link principali (Products, About, Contacts) */}
+            {/* Div centrale */}
             <div className="navbar-center">
                 <Logo text={logoText} />
                 {centerLinks.length > 0 && (
@@ -81,13 +80,19 @@ export const Navbar = ({ logoText, items }: NavbarProps) => {
                 )}
             </div>
 
-            {/* Div di destra: contiene i link Cart e User */}
+            {/* Div di destra */}
             <div className="navbar-right">
                 <NavLinksList items={rightLinks} ariaLabel="Shop Menu" />
             </div>
 
-            {/* Menu mobile, contiene tutti i link principali, incluso il link "Home" */}
+            {/* Menu mobile con pulsante di chiusura separato */}
             <div className={`mobile-menu-overlay ${isMenuOpen ? 'active' : ''}`} id="mobile-nav-menu">
+                <button
+                    className="close-menu-button"
+                    onClick={handleMenuToggle}
+                    aria-label="Chiudi menu">
+                    <FontAwesomeIcon icon={faTimes} />
+                </button>
                 <NavLinksList items={mainLinks} ariaLabel="Mobile Nav Menu" className="mobile-nav-list" />
             </div>
         </header>
