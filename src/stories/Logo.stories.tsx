@@ -36,7 +36,7 @@ type Story = StoryObj<typeof meta>;
 // Esporta la storia 'Default'
 export const Default: Story = {
     // Argomenti di default per la storia
-    args: { text: "Logo" },
+    args: { text: "TechLoom" },
     // Funzione di renderizzazione che mostra il componente con gli argomenti
     render: ({ text }) => <Logo text={text} />
 };
