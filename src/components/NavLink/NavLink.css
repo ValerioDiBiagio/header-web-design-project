@@ -19,12 +19,11 @@
 /* Stile per i link non selezionati in stato di hover e focus. */
 .items:hover,
 .items:focus {
-    /* Colore al passaggio del mouse: Usa un giallo più scuro per il contrasto */
     color: light-dark(var(--color-vibrant-yellow-8), var(--color-vibrant-yellow-2));
     outline: none;
     box-shadow:
-        inset 0 2px 0 0 var(--color-trust-blue-11),
-        inset 0 -2px 0 0 var(--color-trust-blue-11);
+        inset 0 2px 0 0 light-dark(var(--color-trust-blue-11), var(--color-trust-blue-1)),
+        inset 0 -2px 0 0 light-dark(var(--color-trust-blue-11), var(--color-trust-blue-1));
 }
 
 /* Stile per i link non selezionati, hamburger menu e pulsante di chiusura
@@ -35,12 +34,11 @@
 .hamburger-menu:focus,
 .close-menu-button:hover,
 .close-menu-button:focus {
-    /* Colore al passaggio del mouse: Usa un giallo più scuro per il contrasto */
     color: light-dark(var(--color-vibrant-yellow-8), var(--color-vibrant-yellow-2));
     outline: none;
     box-shadow:
-        inset 0 2px 0 0 var(--color-trust-blue-11),
-        inset 0 -2px 0 0 var(--color-trust-blue-11);
+        inset 0 2px 0 0 light-dark(var(--color-trust-blue-11), var(--color-trust-blue-1)),
+        inset 0 -2px 0 0 light-dark(var(--color-trust-blue-11), var(--color-trust-blue-1));
 }
 
 /* Stile per i link selezionati. */
@@ -52,6 +50,6 @@
     cursor: default;
     outline: none;
     box-shadow:
-        inset 0 2px 0 0 var(--color-trust-blue-11),
-        inset 0 -2px 0 0 var(--color-trust-blue-11);
+        inset 0 2px 0 0 light-dark(var(--color-trust-blue-11), var(--color-trust-blue-1)),
+        inset 0 -2px 0 0 light-dark(var(--color-trust-blue-11), var(--color-trust-blue-1));
 }
