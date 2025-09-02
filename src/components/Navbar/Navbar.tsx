@@ -1,5 +1,4 @@
-// ... (omissis)
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Logo } from "../Logo/Logo";
 import { NavLinksList, type NavLinksListProps } from "../NavLinksList/NavLinksList";
 import "./Navbar.css";
@@ -16,6 +15,7 @@ export const Navbar = ({ logoText, items }: NavbarProps) => {
         items.find(item => item.selected)?.label || null
     );
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const navbarRef = useRef<HTMLDivElement>(null);
 
     const handleLinkClick = (label: string) => {
         if (selectedLink === label) {
@@ -53,8 +53,24 @@ export const Navbar = ({ logoText, items }: NavbarProps) => {
     const centerLinks = mainLinks.filter(item => item.label !== 'Home');
     const rightLinks = updatedItems.filter(item => ['Carrello', 'Utente'].includes(item.label));
 
+    useEffect(() => {
+        const handleOutsideClick = (event: MouseEvent) => {
+            if (navbarRef.current && !navbarRef.current.contains(event.target as Node) && isMenuOpen) {
+                setIsMenuOpen(false);
+            } else if (navbarRef.current && !navbarRef.current.contains(event.target as Node)) {
+                setSelectedLink(null);
+            }
+        };
+
+        document.addEventListener('mousedown', handleOutsideClick);
+
+        return () => {
+            document.removeEventListener('mousedown', handleOutsideClick);
+        };
+    }, [isMenuOpen]);
+
     return (
-        <header className="navbar-container">
+        <header ref={navbarRef} className="navbar-container">
             {/* Div di sinistra: contiene solo il pulsante del menu hamburger */}
             <div className="navbar-left">
                 <button

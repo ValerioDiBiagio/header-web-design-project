@@ -55,7 +55,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
     // Argomenti di default per questo story
     args: {
-        logoText: "Logo",
+        logoText: "TechLoom",
         items: [
             { label: "Home", onClick: () => console.log("Home clicked") },
             { label: "Informatica", onClick: () => console.log("Informatica clicked") },
@@ -77,7 +77,7 @@ export const Default: Story = {
 export const Selected: Story = {
     // Argomenti di default per questo story
     args: {
-        logoText: "Logo",
+        logoText: "TechLoom",
         items: [
             { label: "Home", onClick: () => console.log("Home clicked"), selected: true },
             { label: "Informatica", onClick: () => console.log("Informatica clicked") },
