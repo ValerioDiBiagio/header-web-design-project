@@ -22,18 +22,9 @@
 
 
     /* Colors */
-    --hue-red: 25;
-    --hue-pink: 350;
-    --hue-purple: 310;
-    --hue-violet: 290;
-    --hue-indigo: 270;
-    --hue-blue: 240;
-    --hue-cyan: 210;
-    --hue-teal: 185;
-    --hue-green: 145;
-    --hue-lime: 125;
-    --hue-yellow: 100;
-    --hue-orange: 75;
+    --hue-vibrant-yellow: 60;
+    --hue-blue-gray: 220;
+    --hue-trust-blue: 215;
 
     /* Toni neutri per lo sfondo e il testo, con una leggera sfumatura blu per professionalità */
     --color-blue-gray-0: oklch(99% 0.025 var(--hue-blue-gray));
@@ -93,10 +84,7 @@
     --color-neutral-bcg: light-dark(var(--color-blue-gray-2), var(--color-blue-gray-12));
     --color-neutral-text: light-dark(var(--color-blue-gray-12), var(--color-blue-gray-2));
 
-    /* Aggiungi anche la definizione dell'hue se non è già presente */
     --hue-vibrant-yellow: 60;
-
-    /* Definizioni delle tonalità di base (hue) */
     --hue-blue-gray: 220;
     --hue-trust-blue: 215;
     --hue-error-red: 350;
