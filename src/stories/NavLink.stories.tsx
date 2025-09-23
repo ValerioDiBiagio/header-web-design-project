@@ -7,7 +7,7 @@ import { Icon } from '../components/Icon/Icon';
 // Metadati di configurazione per il componente NavLink in Storybook
 const meta: Meta<typeof NavLink> = {
     // Titolo e percorso nella sidebar di Storybook
-    title: 'Components/NavLink',
+    title: 'Components/Atoms/NavLink',
     // Componente da documentare
     component: NavLink,
     // Parametri di visualizzazione

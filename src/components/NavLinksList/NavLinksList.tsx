@@ -3,7 +3,7 @@ import type { NavLinkProps } from '../NavLink/NavLink';
 import "./NavLinkList.css"
 
 export type NavLinksListProps = {
-    items: (NavLinkProps & { selected?: boolean; onClick?: () => void })[];
+    items: NavLinkProps[];
     ariaLabel: string;
     className?: string;
 };

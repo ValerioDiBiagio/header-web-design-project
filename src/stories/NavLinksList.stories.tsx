@@ -5,7 +5,7 @@ import type { NavLinksListProps } from '../components/NavLinksList/NavLinksList'
 // Configurazione principale per Storybook
 const meta: Meta<typeof NavLinksList> = {
     // Titolo della storia nella sidebar di Storybook
-    title: "components/NavLinksList",
+    title: "components/Molecules/NavLinksList",
     // Componente associato a questa storia
     component: NavLinksList,
     parameters: {

@@ -2,13 +2,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Navbar } from '../components/Navbar/Navbar';
 import type { NavbarProps } from '../components/Navbar/Navbar';
-import { useState } from 'react';
 
 
 // Configurazione principale (meta) per lo story del componente Navbar
 const meta: Meta<typeof Navbar> = {
     // Titolo dello story visualizzato nella sidebar di Storybook
-    title: "components/Navbar",
+    title: "Components/Organism/Navbar",
     // Componente da documentare
     component: Navbar,
     // Parametri globali per lo story
@@ -72,60 +71,3 @@ export const Default: Story = {
         return <Navbar {...args} />;
     }
 }
-
-
-export const Selected: Story = {
-    // Argomenti di default per questo story
-    args: {
-        logoText: "TechLoom",
-        items: [
-            { label: "Home", onClick: () => console.log("Home clicked"), selected: true },
-            { label: "Informatica", onClick: () => console.log("Informatica clicked") },
-            { label: "Telefonia", onClick: () => console.log("Telefonia clicked") },
-            { label: "Gaming", onClick: () => console.log("Gaming clicked") },
-            { label: "Elettrodomestici", onClick: () => console.log("Elettrodomestici clicked") },
-            { label: "Carrello", onClick: () => console.log("Carrello clicked") },
-            { label: "Utente", onClick: () => console.log("Utente clicked") }
-        ],
-    },
-    // Funzione per il rendering del componente nello story
-    render: (args: NavbarProps) => {
-        // Passa gli argomenti al componente
-        return <Navbar {...args} />;
-    }
-}
-
-
-export const Navigation: Story = {
-
-    args: {
-        logoText: "TechLoom",
-        items: [
-            { label: "Home" },
-            { label: "Informatica" },
-            { label: "Telefonia" },
-            { label: "Gaming" },
-            { label: "Elettrodomestici" },
-            { label: "Carrello" },
-            { label: "Utente" }
-        ],
-    },
-
-    render: (args: NavbarProps) => {
-        // Modifica qui: imposta lo stato iniziale su null
-        const [selectedLink, setSelectedLink] = useState<string | null>(null);
-
-        const updatedItems = args.items.map(item => ({
-            ...item,
-            selected: selectedLink === item.label,
-            onClick: () => {
-                setSelectedLink(item.label);
-                if (item.onClick) {
-                    item.onClick();
-                }
-            }
-        }));
-
-        return <Navbar {...args} items={updatedItems} />;
-    },
-};

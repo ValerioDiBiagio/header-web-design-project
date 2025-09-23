@@ -5,7 +5,7 @@ import { Logo } from "../components/Logo/Logo";
 // Configurazione principale (metadata) per Storybook
 const meta: Meta<typeof Logo> = {
     // Titolo e percorso nella sidebar di Storybook
-    title: 'Components/Logo',
+    title: 'Components/Atoms/Logo',
     // Componente da documentare
     component: Logo,
     // Parametri di visualizzazione
