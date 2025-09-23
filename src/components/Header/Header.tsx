@@ -1,21 +1,21 @@
 import { useState, useEffect, useRef } from 'react';
 import { Logo } from "../Logo/Logo";
 import { NavLinksList, type NavLinksListProps } from "../NavLinksList/NavLinksList";
-import "./Navbar.css";
+import "./Header.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes, faUser, faShoppingCart, faHome } from '@fortawesome/free-solid-svg-icons';
 
-export type NavbarProps = {
+export type HeaderProps = {
     logoText: string;
     items: NavLinksListProps["items"];
 };
 
-export const Navbar = ({ logoText, items }: NavbarProps) => {
+export const Header = ({ logoText, items }: HeaderProps) => {
     const [selectedLink, setSelectedLink] = useState<string | null>(
         items.find(item => item.selected)?.label || null
     );
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const navbarRef = useRef<HTMLDivElement>(null);
+    const headerRef = useRef<HTMLDivElement>(null);
 
     const handleLinkClick = (label: string) => {
         if (selectedLink === label) {
@@ -55,9 +55,9 @@ export const Navbar = ({ logoText, items }: NavbarProps) => {
 
     useEffect(() => {
         const handleOutsideClick = (event: MouseEvent) => {
-            if (navbarRef.current && !navbarRef.current.contains(event.target as Node) && isMenuOpen) {
+            if (headerRef.current && !headerRef.current.contains(event.target as Node) && isMenuOpen) {
                 setIsMenuOpen(false);
-            } else if (navbarRef.current && !navbarRef.current.contains(event.target as Node)) {
+            } else if (headerRef.current && !headerRef.current.contains(event.target as Node)) {
                 setSelectedLink(null);
             }
         };
@@ -70,9 +70,9 @@ export const Navbar = ({ logoText, items }: NavbarProps) => {
     }, [isMenuOpen]);
 
     return (
-        <header ref={navbarRef} className="navbar-container">
+        <header ref={headerRef} className="header-container">
             {/* Div di sinistra: contiene solo il pulsante del menu hamburger */}
-            <div className="navbar-left">
+            <div className="header-left">
                 <button
                     className="hamburger-menu"
                     onClick={handleMenuToggle}
@@ -89,7 +89,7 @@ export const Navbar = ({ logoText, items }: NavbarProps) => {
             </div>
 
             {/* Div centrale */}
-            <div className="navbar-center">
+            <div className="header-center">
                 <Logo text={logoText} />
                 {centerLinks.length > 0 && (
                     <NavLinksList items={centerLinks} ariaLabel="Nav Menu" className="desktop-nav-links" />
@@ -97,7 +97,7 @@ export const Navbar = ({ logoText, items }: NavbarProps) => {
             </div>
 
             {/* Div di destra */}
-            <div className="navbar-right">
+            <div className="header-right">
                 <NavLinksList items={rightLinks} ariaLabel="Shop Menu" />
             </div>
 

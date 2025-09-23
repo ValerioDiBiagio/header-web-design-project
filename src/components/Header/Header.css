@@ -1,5 +1,5 @@
 /* Stili di base per il contenitore della navbar */
-.navbar-container {
+.header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -9,9 +9,9 @@
     position: relative;
 }
 
-.navbar-left,
-.navbar-right,
-.navbar-center {
+.header-left,
+.header-right,
+.header-center {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -22,7 +22,7 @@
     margin: auto;
 }
 
-.navbar-center {
+.header-center {
     flex-direction: column;
     flex-grow: 1;
     justify-content: center;
@@ -30,11 +30,11 @@
     text-align: center;
 }
 
-.navbar-left {
+.header-left {
     justify-content: flex-start;
 }
 
-.navbar-right {
+.header-right {
     justify-content: flex-end;
 }
 
@@ -128,26 +128,26 @@
         display: none;
     }
 
-    .navbar-container {
+    .header-container {
         justify-content: space-between;
         align-items: center;
         padding: var(--spacing-sm) var(--spacing-md);
     }
 
-    .navbar-center {
+    .header-center {
         display: flex;
         flex-grow: 1;
         justify-content: center;
         order: 2;
     }
 
-    .navbar-right {
+    .header-right {
         display: flex;
         order: 3;
     }
 
-    .navbar-right .items span:nth-child(2),
-    .navbar-left .items span:nth-child(2) {
+    .header-right .items span:nth-child(2),
+    .header-left .items span:nth-child(2) {
         display: none;
     }
 
@@ -175,42 +175,42 @@
         transform: translateX(0);
     }
 
-    .navbar-container {
+    .header-container {
         justify-content: space-between;
         align-items: center;
         padding: var(--spacing-sm) var(--spacing-md);
     }
 
-    .navbar-left {
+    .header-left {
         display: flex;
         order: 1;
     }
 
-    .navbar-center {
+    .header-center {
         display: flex;
         flex-grow: 1;
         justify-content: center;
         order: 2;
     }
 
-    .navbar-center .list-items {
+    .header-center .list-items {
         display: none;
     }
 
-    .navbar-right {
+    .header-right {
         display: flex;
         order: 3;
     }
 
-    .navbar-left .items {
+    .header-left .items {
         display: none;
     }
 
-    .navbar-right .items span:nth-child(2) {
+    .header-right .items span:nth-child(2) {
         display: none;
     }
 
-    .navbar-right .list-items {
+    .header-right .list-items {
         gap: var(--spacing-xs);
     }
 
@@ -243,12 +243,12 @@
         width: 2rem;
     }
 
-    .navbar-center {
+    .header-center {
         display: flex;
         align-items: center;
     }
 
-    .navbar-container {
+    .header-container {
         justify-content: center;
     }
 

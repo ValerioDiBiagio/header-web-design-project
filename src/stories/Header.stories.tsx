@@ -1,15 +1,15 @@
 // Imports necessari per Storybook e il componente Navbar
 import type { Meta, StoryObj } from '@storybook/react';
-import { Navbar } from '../components/Navbar/Navbar';
-import type { NavbarProps } from '../components/Navbar/Navbar';
+import { Header } from '../components/Header/Header';
+import type { HeaderProps } from '../components/Header/Header';
 
 
 // Configurazione principale (meta) per lo story del componente Navbar
-const meta: Meta<typeof Navbar> = {
+const meta: Meta<typeof Header> = {
     // Titolo dello story visualizzato nella sidebar di Storybook
-    title: "Components/Organism/Navbar",
+    title: "Components/Organism/Header",
     // Componente da documentare
-    component: Navbar,
+    component: Header,
     // Parametri globali per lo story
     parameters: {
         // Imposta il layout a 'fullscreen' per una visualizzazione ottimale
@@ -66,8 +66,8 @@ export const Default: Story = {
         ],
     },
     // Funzione per il rendering del componente nello story
-    render: (args: NavbarProps) => {
+    render: (args: HeaderProps) => {
         // Passa gli argomenti al componente
-        return <Navbar {...args} />;
+        return <Header {...args} />;
     }
 }
