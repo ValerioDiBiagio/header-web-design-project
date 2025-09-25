@@ -5,7 +5,7 @@ import "../styles/colors.css"
 // Metadati di Storybook per il componente Colors.
 // Configura il titolo nel pannello e abilita la documentazione automatica.
 const meta: Meta = {
-    title: 'Atoms/Colors',
+    title: 'Foundations/Colors',
     tags: ['autodocs']
 }
 

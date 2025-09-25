@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 // Oggetto di metadati per la storia di Storybook.
 // Questo oggetto configura come il file Thypography verrà visualizzato in Storybook.
 const meta: Meta = {
-    title: "Atoms/Typography",
+    title: "Foundations/Typography",
     parameters: {
         layout: "centered"
     },

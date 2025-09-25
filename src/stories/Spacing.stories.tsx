@@ -5,7 +5,7 @@ import "../styles/spacing.css"
 
 // Definire i metadati per Storybook, come il titolo della storia e le configurazioni di layout.
 const meta: Meta = {
-    title: "Atoms/Spacing",
+    title: "Foundations/Spacing",
     parameters: {
         layout: "centered",
     },
